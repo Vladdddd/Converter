@@ -1,0 +1,35 @@
+<main>
+  <div class="convertations">
+    <div class="convertation">
+      <h1>Give</h1>
+      <select name="selectCurrency" (change)="onChangeFirstCurrency($event)">
+        <ng-container *ngFor="let c of currency; index as i">
+          <option [value]="c.cc" [selected]="c.cc === 'USD'">
+            {{ c.cc }} - {{ c.txt }}
+          </option>
+        </ng-container>
+      </select>
+      <input
+        type="number"
+        [value]="firstCurrencyValue"
+        (input)="onInputFirstValue($event)"
+      />
+    </div>
+
+    <div class="convertation">
+      <h1>Get</h1>
+      <select name="selectCurrency" (change)="onChangeSecondCurrency($event)">
+        <ng-container *ngFor="let c of currency; index as i">
+          <option [value]="c.cc" [selected]="c.cc === 'EUR'">
+            {{ c.cc }} - {{ c.txt }}
+          </option>
+        </ng-container>
+      </select>
+      <input
+        type="number"
+        [value]="secondCurrencyValue"
+        (input)="onInputSecondValue($event)"
+      />
+    </div>
+  </div>
+</main>

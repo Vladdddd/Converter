@@ -1,0 +1,76 @@
+$main-size: 22px;
+
+%convertItem {
+  padding: 6%;
+  border: 0;
+  font-size: $main-size;
+
+  @media (max-width: 1024px) {
+    font-size: $main-size - 8px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: $main-size - 12px;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  gap: 1%;
+  margin-top: 7%;
+}
+
+.convertations {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+
+  width: 60%;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 4%;
+
+  .convertation {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      margin: 0 0 4% 0;
+      text-align: center;
+      font-size: $main-size + 10px;
+
+      @media (max-width: 1024px) {
+        font-size: $main-size + 2px;
+      }
+
+      @media (max-width: 768px) {
+        font-size: $main-size - 2px;
+      }
+    }
+  }
+}
+
+select[name="selectCurrency"] {
+  @extend %convertItem;
+
+  width: 100%;
+}
+
+input[type=number] {
+  @extend %convertItem;
+
+  width: 88%;
+  background-color: #edf2f7;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
